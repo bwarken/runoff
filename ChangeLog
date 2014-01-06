@@ -1,0 +1,32 @@
+2014-01-06  Bernd Warken  <bernd.warken@web.de>
+
+	* Makefile: add this file
+
+2014-01-05  Bernd Warken  <bernd.warken@web.de>
+
+	* runoff.7
+	* runoff_filenames.7
+	* runoff_history.7
+	* runoff2mom.1
+	* runoff2mom.pl
+	* ChangeLog
+	create these files and the first version of RUNOFF 0.9
+
+
+Copyright 2014	Bernd Warken <bernd.warken@web.de>
+
+This file is part of RUNOFF, a free software project.
+
+You can redistribute it and/or modify it under the terms of the GNU
+General Public License version 2 or (at your option) any later
+version. as published by the Free Software Foundation (FSF).
+
+You can find the text of this license in the file `gpl-2.0.txt'.
+in this package.  It is also available in the internet at
+<http://www.gnu.org/licenses/gpl-2.0.html>.
+
+
+Local Variables:
+version-control: never
+coding: utf-8
+End:

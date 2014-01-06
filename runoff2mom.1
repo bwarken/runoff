@@ -1,0 +1,140 @@
+.\"
+.TH RUNOFF2MOM 1
+.SH NAME
+RUNOFF \[em] the predecessor of the \f[CI]roff\f[] langugage
+.
+.\" The .SH was moved to this place in order to appease `apropos'.
+.
+.\" --------------------------------------------------------------------
+.\" Legalese
+.\" --------------------------------------------------------------------
+.
+.de copying
+Copyright 2014 Bernd Warken <bernd.warken@web.de>
+
+Last update: 5 Jan 2014
+
+This file is part of RUNOFF, a free software project.
+
+You can redistribute it and/or modify it under the terms of the GNU
+General Public License version 2 or (at your option) any later
+version. as published by the Free Software Foundation (FSF).
+
+You can find the text of this license in the file
+.B gpl-2.0.txt
+in this package, it's also available in the internet at
+.UR http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
+.UE .
+..
+.
+.
+.\" --------------------------------------------------------------------
+.\" Setup
+.\" --------------------------------------------------------------------
+.
+.ds1 Ellipsis "\&.\|.\|.\&\"
+.
+.
+.\" --------------------------------------------------------------------
+.\" Macro definitions
+.\" --------------------------------------------------------------------
+.
+.\" --------------------------------------------------------------------
+.\" .FONT (<font name> <text> [<font name> <text> ...])
+.\"
+.\" Print in different fonts: R, I, B, CR, CI, CB
+.\"
+.de1 FONT
+.  if (\\n[.$] = 0) \{\
+.	nop \&\f[P]\&
+.	return
+.  \}
+.  ds result \&
+.  while (\\n[.$] >= 2) \{\
+.	as result \,\f[\\$1]\\$2
+.	if !"\\$1"P" .as result \f[P]
+.	shift 2
+.  \}
+.  if (\\n[.$] = 1) .as result \,\f[\\$1]
+.  nh
+.  nop \\*[result]\&
+.  hy
+..
+.
+.\" --------------------------------------------------------------------
+.\" .Topic  ([<indent>])
+.\"
+.\" A bulleted paragraph
+.\"
+.de Topic
+.  ie \\n[.$]=0 \
+.    ds @indent 2m\"
+.  el \
+.    ds @indent \\$1\"
+.  IP \[bu] \\*[@indent]
+.  rm @indent
+..
+.
+.\" --------------------------------------------------------------------
+.\" .UL (<text to underline> [<append>])
+.\"
+.\" Underline $1 and append $2 without underline
+.\"
+.de UL
+.  if t \}\
+.    nop \Z'\\$1'\v'.25m'\D'l \w'\\$1'u 0'\v'-.25m'\\$2
+.    return
+.  \}
+.  ul 1
+\\$1\c
+\\$2
+..
+.
+.
+.\" --------------------------------------------------------------------
+.SH "DESCRIPTION"
+.\" --------------------------------------------------------------------
+.
+.B runoff.mom
+is the program that will produce
+.I mom
+output from
+.I RUNOFF
+files.
+.
+.
+.\" --------------------------------------------------------------------
+.SH "SEE ALSO"
+.\" --------------------------------------------------------------------
+.
+.BR runoff (7),
+.BR runoff_filenames (7),
+.BR runoff_history (7),
+.BR groff_mom (7)
+.
+.
+.P
+If you need ancient files written in the
+.I RUNOFF
+language or documentation of old time, have a look at
+.RS
+.EX
+git clone https://github.com/RUNOFF/RUNOFF
+.EE
+.RE
+.
+.
+.\" --------------------------------------------------------------------
+.SH "LICENSE"
+.\" --------------------------------------------------------------------
+.
+.copying
+.
+.
+.\" --------------------------------------------------------------------
+.\" Emacs settings
+.\" --------------------------------------------------------------------
+.
+.\" Local Variables:
+.\" mode: nroff
+.\" End:
